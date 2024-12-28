@@ -194,15 +194,18 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We introduce UnrealZoo, a rich collection of photo-realistic 3D virtual worlds (🛖🛣️⛰️🏭🏟️🏰🛕🏙️🚉🏗️🏥🤽🏻‍♂️🏝️🛶) built on Unreal Engine, designed to reflect the complexity and variability of the open worlds.
-            Additionally, we offer a variety of playable entities (🚶🏻‍♂️🚶🏻🤖🚗🏍️🛩️🐘🐕🐎🐧🐢🐖🐏🐂 ) for embodied AI.
-            Based on UnrealCV, we provide a suite of easy-to-use Python APIs and tools for various potential applications, such as data collection, environment augmentation, distributed training, and benchmarking.
-            We improve the rendering and communication efficiency of UnrealCV, namely UnrealCV+, to support advanced applications, such as multi-agent interaction.
+            We introduce UnrealZoo, a rich collection of photo-realistic 3D virtual worlds  built on Unreal Engine, designed to reflect the complexity and variability of the open worlds.
+            Additionally, we offer a variety of playable entities for embodied AI。
           </p>
-          <p>
-            Our experiments benchmark agents in various complex scenes, focusing on visual navigation and tracking, which are fundamental capabilities for embodied visual intelligence.
-            The results yield valuable insights into the advantages of diverse training environments for reinforcement learning (RL) agents and the challenges faced by current embodied vision agents, including those based on RL and large vision-language models (VLMs), in open worlds. These challenges involve latency in closed-loop control in dynamic scenes and reasoning about 3D spatial structures in unstructured terrain.
-          </p>
+          <ul>
+            <li><strong>Photo-realistic</strong>: Empowered by Unreal Engine 4.27 and 5.4 </li>
+            <li><strong>Diverse Scenes</strong>: 🛖🛣️⛰️🏭🏟️🏰🛕🏙️🚉🏗️🏥🤽🏻‍♂️🏝️🛶</li>
+            <li><strong>Various Playable Entities</strong>:🚶🏻‍♂️️🚶🏻🤖🚗🏍️🛩️🐘🐕🐎🐧🐢🐖🐏🐂</li>
+            <li><strong>Rich Agent-Object Interactions</strong>: Climbing, Jumping, Running, Squatting, Sitting, Pick-up, etc.</li>
+            <li><strong>Flexible Python APIs</strong>: Integrated with UnrealCV and Gym Interfaces for control
+            <li><strong>Multi-agent Support</strong>: Real-time interaction of 10+ vision-based agents in one scene with optimized UnrealCV.</li>
+            <li><strong>Ready-to-use</strong>: Download and play without any additional knowledge of Unreal Engine.</li>
+          </ul>
         </div>
       </div>
     </div>
@@ -276,6 +279,12 @@
                     type="video/mp4">
           </video>
         </div>
+        <div class="item item-classroom">
+          <video poster="" id="classroom" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/scene/classroom.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
         <div class="item item-city">
           <video poster="" id="city" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/scene/city.mp4"
@@ -293,50 +302,20 @@
       <h2 class="title is-3 has-text-centered">Enriching Bodies</h2>
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+          <video poster="" id="human" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/body/human.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+          <video poster="" id="machine" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/body/machine.mp4"
                     type="video/mp4">
           </video>
         </div>
         <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+          <video poster="" id="animal" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/body/animal.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
-                    type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
                     type="video/mp4">
           </video>
         </div>
@@ -350,51 +329,69 @@
     <div class="container">
       <h2 class="title is-3 has-text-centered">Enriching Interactions</h2>
       <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-steve">
-          <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+        <div class="item item-destroy_car">
+          <video poster="" id="destroy_car" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/interaction/destroy_car.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-chair-tp">
-          <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+        <div class="item item-climb_ladder">
+          <video poster="" id="climb_ladder" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/interaction/climb_ladder.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-shiba">
-          <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+        <div class="item item-enter_exit_car">
+          <video poster="" id="enter_exit_car" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/interaction/enter_exit_car.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-fullbody">
-          <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/fullbody.mp4"
+        <div class="item item-climb_woman">
+          <video poster="" id="climb_woman" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/interaction/climb_woman.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-blueshirt">
-          <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/blueshirt.mp4"
+        <div class="item item-climb">
+          <video poster="" id="climb" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/interaction/climb.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-mask">
-          <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/mask.mp4"
+        <div class="item item-squat">
+          <video poster="" id="squat" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/interaction/squat.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-coffee">
-          <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/coffee.mp4"
+        <div class="item item-kick">
+          <video poster="" id="kick" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/interaction/kick.mp4"
                     type="video/mp4">
           </video>
         </div>
-        <div class="item item-toby">
-          <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
-            <source src="./static/videos/toby2.mp4"
+        <div class="item item-jump">
+          <video poster="" id="jump" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/interaction/jump.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-kick">
+          <video poster="" id="kick" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/interaction/kick_ball.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-opendoor">
+          <video poster="" id="opendoor" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/open_door.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-sit">
+          <video poster="" id="sit" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/sit.mp4"
                     type="video/mp4">
           </video>
         </div>
