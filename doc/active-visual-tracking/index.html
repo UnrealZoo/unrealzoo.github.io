@@ -1705,37 +1705,49 @@
 <h1 id="active-visual-tracking">Active Visual Tracking</h1>
 <p>✨We use embodied visual tracking tasks to benchmark embodied vision agents in complex dynamic environments.</p>
 <h2 id="introduction">Introduction:</h2>
-<p>Embodied visual tracking is a challenging task that requires an agent to dynamically follow a moving target within a 3D environment, leveraging first-person vision and continuous interaction with the surroundings. We rely on the UnreaZOO platform to benchmark agents under realistic, ever-changing conditions to assess their robustness, adaptability, and generalization across diverse scenes.</p>
+<p>Embodied visual tracking is a challenging task that requires an agent to dynamically follow a moving target within a 3D environment, leveraging first-person vision and continuous interaction with the surroundings. We rely on the UnrealZoo platform to benchmark agents under realistic, ever-changing conditions to assess their robustness, adaptability, and generalization across diverse scenes.</p>
 <p>UnrealZoo provides a wide collection of photorealistic, richly varied environments, as the playground for embodied AI agents. The diversity of settings and agents enables researchers to push embodied AI to new levels of capability, testing in scenarios that go beyond simple indoor navigation.</p>
 <h3 id="unrealzoo-key-features-for-embodied-visual-tracking">UnrealZoo Key Features for Embodied Visual Tracking</h3>
 <ul>
 <li>
-<p>Photo-realistic Dynamic Environments:
-Designed to simulate a range of real-world challenges, including occlusions, dynamic lighting, irregular terrains, and multi-level structures.</p>
+<p><strong>Photo-realistic Dynamic Environments:</strong> Designed to simulate a range of real-world challenges, including occlusions, dynamic lighting, irregular terrains, and multi-level structures.</p>
 </li>
 <li>
-<p>Multi-Agent Scenarios:
-Agents must navigate and track targets in dynamic settings with multiple moving agents and objects, promoting collaborative tracking for applications like rescue missions or surveillance. </p>
+<p><strong>Multi-Agent Scenarios:</strong> Agents must navigate and track targets in dynamic settings with multiple moving agents and objects, promoting collaborative tracking for applications like rescue missions or surveillance.</p>
 </li>
 <li>
-<p>Customizable Environment APIs:
-Our improved API makes it easy for users to set up complex tracking tasks and interactions between the agent and its environment, including time dilation wrappers for control frequency tuning.</p>
+<p><strong>Customizable Environment APIs:</strong> Our improved API makes it easy for users to set up complex tracking tasks and interactions between the agent and its environment, including time dilation wrappers for control frequency tuning.</p>
 </li>
 <li>
-<p>Data Collection API:
-Users can collect visual datasets directly from the environment using UnrealCV+ with color, object masks, surface normals, and depth data capture.</p>
+<p><strong>Data Collection API:</strong> Users can collect visual datasets directly from the environment using UnrealCV+ with color, object masks, surface normals, and depth data capture.</p>
 </li>
 </ul>
 <h2 id="evaluate-tracking-agents-in-unrealzoo">Evaluate Tracking Agents in UnrealZoo</h2>
 <p>Below are examples of the tracking agents' first-person views in four kinds of scenes:</p>
-<p>📌Interior Scenes: </p>
+<p>📌Interior Scenes:</p>
 <p>Agents deal with frequent low-level obstacles and narrow pathways, testing their occlusion handling and precise movements.</p>
-<p>📌Palaces: </p>
+<p><img alt="Offline UndergroundParking" src="../assets/avt_interior_1.gif" /></p>
+<p><img alt="Offline Bunker" src="../assets/avt_interior_2.gif" /></p>
+<p><img alt="LV Soul Cave" src="../assets/avt_interior_3.gif" /></p>
+<p><img alt="Offline Storagehouse" src="../assets/avt_interior_4.gif" /></p>
+<p>📌Palaces:</p>
 <p>Agents face multi-level structures and intricate designs, where mastering spatial awareness is essential.</p>
-<p>📌Wilds: </p>
+<p><img alt="Brass Gardens" src="../assets/avt_palaces_1.gif" /></p>
+<p><img alt="Eastern Garden" src="../assets/avt_palaces_2.gif" /></p>
+<p><img alt="Offline Western Garden" src="../assets/avt_palaces_3.gif" /></p>
+<p><img alt="Offline Modular SciFi Season" src="../assets/avt_palaces_4.gif" /></p>
+<p>📌Wilds:</p>
 <p>Irregular terrains and changing light conditions simulate outdoor tracking under unpredictable conditions.</p>
-<p>📌Modern Scenes: </p>
+<p><img alt="Output" src="../assets/avt_wilds_1.gif" /></p>
+<p><img alt="Offline Greek Island" src="../assets/avt_wilds_2.gif" /></p>
+<p><img alt="EF Gus" src="../assets/avt_wilds_3.gif" /></p>
+<p><img alt="Offline SnowMap" src="../assets/avt_wilds_4.gif" /></p>
+<p>📌Modern Scenes:</p>
 <p>These high-fidelity scenes represent real-world environments, such as Factories and parking lots, requiring agents to adapt to detailed and dense surroundings.</p>
+<p><img alt="Offline Industrial Area" src="../assets/avt_modern_1.gif" /></p>
+<p><img alt="Offline Downtown West" src="../assets/avt_modern_2.gif" /></p>
+<p><img alt="ContainerYard Day" src="../assets/avt_modern_3.gif" /></p>
+<p><img alt="Offline Suburb" src="../assets/avt_modern_4.gif" /></p>
 
 
 

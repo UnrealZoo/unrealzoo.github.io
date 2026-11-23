@@ -1372,12 +1372,12 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        简介
+        简介：
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="简介">
+    <nav class="md-nav" aria-label="简介：">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1397,10 +1397,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#unrealzoo_1" class="md-nav__link">
+  <a href="#unrealzoo-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        在 UnrealZoo 中评估跟踪智能体
+        在 UnrealZoo 中评测跟踪 Agent
       
     </span>
   </a>
@@ -1647,12 +1647,12 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        简介
+        简介：
       
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="简介">
+    <nav class="md-nav" aria-label="简介：">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1672,10 +1672,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#unrealzoo_1" class="md-nav__link">
+  <a href="#unrealzoo-agent" class="md-nav__link">
     <span class="md-ellipsis">
       
-        在 UnrealZoo 中评估跟踪智能体
+        在 UnrealZoo 中评测跟踪 Agent
       
     </span>
   </a>
@@ -1703,39 +1703,51 @@
 
 
 <h1 id="_1">主动视觉跟踪</h1>
-<p>✨ 使用具身视觉跟踪任务评估具身视觉智能体在复杂动态环境中的表现。</p>
-<h2 id="_2">简介</h2>
-<p>具身视觉跟踪是一项具有挑战性的任务，要求智能体在3D环境中动态跟随移动目标，利用第一人称视觉并与周围环境持续交互。依托 UnrealZOO 平台，在真实且不断变化的条件下对智能体进行基准测试，以评估其在不同场景中的鲁棒性、适应性和泛化能力。</p>
-<p>UnrealZoo 提供了大量高度逼真、丰富多样的环境，作为具身AI智能体的试验场。多样的场景设置和智能体使研究人员能够将具身AI的能力推向新的高度，在超越简单室内导航的场景中进行测试。</p>
+<p>✨我们使用具身视觉跟踪任务来评测具身视觉 agent 在复杂动态环境中的表现。</p>
+<h2 id="_2">简介：</h2>
+<p>具身视觉跟踪是一项具有挑战性的任务，要求 agent 在 3D 环境中动态跟随移动目标，利用第一人称视觉并与周围环境持续交互。我们依托 UnrealZoo 平台，在真实且不断变化的条件下对 agent 进行评测，以评估其在不同场景中的鲁棒性、适应性和泛化能力。</p>
+<p>UnrealZoo 提供了大量照片级真实、丰富多样的环境，作为具身 AI agent 的试验场。多样的场景和 agent 使研究人员能够将具身 AI 的能力推向新的高度，在超越简单室内导航的场景中进行测试。</p>
 <h3 id="unrealzoo">UnrealZoo 面向具身视觉跟踪的关键特性</h3>
 <ul>
 <li>
-<p>高度逼真的动态环境：
-旨在模拟一系列真实世界挑战，包括遮挡、动态光照、不规则地形和多层结构。</p>
+<p><strong>照片级真实动态环境：</strong> 旨在模拟一系列真实世界挑战，包括遮挡、动态光照、不规则地形和多层结构。</p>
 </li>
 <li>
-<p>多智能体场景：
-智能体必须在包含多个移动智能体和物体的动态环境中导航并跟踪目标，促进面向救援任务或监控等应用的协作跟踪。</p>
+<p><strong>多 Agent 场景：</strong> Agent 必须在包含多个移动 agent 和物体的动态环境中导航并跟踪目标，促进面向救援任务或监控等应用的协同跟踪。</p>
 </li>
 <li>
-<p>可定制环境API：
-改进的API支持轻松设置复杂的跟踪任务以及智能体与环境之间的交互，包括用于控制频率调节的时间膨胀包装器。</p>
+<p><strong>可定制环境 API：</strong> 我们改进后的 API 使用户能够轻松设置复杂的跟踪任务以及 agent 与其环境之间的交互，包括用于控制频率调节的时间膨胀 wrapper。</p>
 </li>
 <li>
-<p>数据采集API：
-使用 UnrealCV+ 可直接从环境中采集视觉数据集，支持颜色、物体掩码、表面法线和深度数据的捕获。</p>
+<p><strong>数据采集 API：</strong> 用户可以使用 UnrealCV+ 直接从环境中采集视觉数据集，支持颜色、物体掩码、表面法线和深度数据的捕获。</p>
 </li>
 </ul>
-<h2 id="unrealzoo_1">在 UnrealZoo 中评估跟踪智能体</h2>
-<p>以下是跟踪智能体在四类场景中第一人称视角的示例：</p>
+<h2 id="unrealzoo-agent">在 UnrealZoo 中评测跟踪 Agent</h2>
+<p>以下是跟踪 agent 在四类场景中第一人称视角的示例：</p>
 <p>📌室内场景：</p>
-<p>智能体需要应对频繁的低矮障碍物和狭窄通道，测试其遮挡处理和精确运动能力。</p>
-<p>📌宫殿：</p>
-<p>智能体面对多层结构和复杂设计，掌握空间感知能力至关重要。</p>
-<p>📌野外：</p>
-<p>不规则地形和变化的光照条件模拟不可预测条件下的户外跟踪。</p>
+<p>Agent 需要应对频繁的低矮障碍物和狭窄通道，考验其遮挡处理能力和精确运动能力。</p>
+<p><img alt="Offline UndergroundParking" src="../assets/avt_interior_1.gif" /></p>
+<p><img alt="Offline Bunker" src="../assets/avt_interior_2.gif" /></p>
+<p><img alt="LV Soul Cave" src="../assets/avt_interior_3.gif" /></p>
+<p><img alt="Offline Storagehouse" src="../assets/avt_interior_4.gif" /></p>
+<p>📌宫殿场景：</p>
+<p>Agent 面对多层结构和复杂设计，掌握空间感知能力至关重要。</p>
+<p><img alt="Brass Gardens" src="../assets/avt_palaces_1.gif" /></p>
+<p><img alt="Eastern Garden" src="../assets/avt_palaces_2.gif" /></p>
+<p><img alt="Offline Western Garden" src="../assets/avt_palaces_3.gif" /></p>
+<p><img alt="Offline Modular SciFi Season" src="../assets/avt_palaces_4.gif" /></p>
+<p>📌野外场景：</p>
+<p>不规则地形和变化的光照条件模拟了不可预测条件下的户外跟踪。</p>
+<p><img alt="Output" src="../assets/avt_wilds_1.gif" /></p>
+<p><img alt="Offline Greek Island" src="../assets/avt_wilds_2.gif" /></p>
+<p><img alt="EF Gus" src="../assets/avt_wilds_3.gif" /></p>
+<p><img alt="Offline SnowMap" src="../assets/avt_wilds_4.gif" /></p>
 <p>📌现代场景：</p>
-<p>这些高保真场景代表真实世界环境，如工厂和停车场，要求智能体适应细节丰富且密集的周围环境。</p>
+<p>这些高保真场景代表真实世界环境，如工厂和停车场，要求 agent 适应细节丰富且密集的周围环境。</p>
+<p><img alt="Offline Industrial Area" src="../assets/avt_modern_1.gif" /></p>
+<p><img alt="Offline Downtown West" src="../assets/avt_modern_2.gif" /></p>
+<p><img alt="ContainerYard Day" src="../assets/avt_modern_3.gif" /></p>
+<p><img alt="Offline Suburb" src="../assets/avt_modern_4.gif" /></p>
 
 
 
