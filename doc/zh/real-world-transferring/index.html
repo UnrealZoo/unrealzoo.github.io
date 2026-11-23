@@ -1316,7 +1316,40 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        简介
+        引言
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部署设置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跨平台评估
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        要点
       
     </span>
   </a>
@@ -1619,7 +1652,40 @@
   <a href="#_2" class="md-nav__link">
     <span class="md-ellipsis">
       
-        简介
+        引言
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        部署设置
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        跨平台评估
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        要点
       
     </span>
   </a>
@@ -1647,8 +1713,51 @@
 
 
 <h1 id="_1">真实世界迁移</h1>
-<p>✨ 跟踪策略已部署于真实场景，目标人物与多个干扰者（&gt;4）遵循不同运动模式。</p>
-<h2 id="_2">简介</h2>
+<p>✨ 我们在真实场景中部署了跟踪策略，目标人物与多个（&gt;4）以不同运动模式移动的干扰者同时存在。</p>
+<h2 id="_2">引言</h2>
+<p>仿真只有在它所教授的技能能够经受物理世界检验时才有价值。为测试在 UnrealZoo 中训练的策略能否迁移到仿真器之外，我们将主动视觉跟踪策略部署到一台物理移动机器人上，要求其在真实环境中跟随目标人物，同时有四个以上干扰者以不同运动模式移动。</p>
+<p>该设置恰好强调了难以在仿真中忠实复现的因素：真实光照与阴影、杂乱且非结构化的布局、不完美的感知，以及真实硬件上感知–控制回路的延迟。</p>
+<h2 id="_3">部署设置</h2>
+<ul>
+<li><strong>机器人平台：</strong> 一台轮式移动机器人，搭载用于第一人称观测的机载相机。</li>
+<li><strong>任务：</strong> 主动视觉跟踪——将目标人物保持在视野内并跟随其穿过场景。</li>
+<li><strong>干扰者：</strong> 四个以上以不同模式移动的人员，刻意穿越视线并遮挡目标。</li>
+<li><strong>策略：</strong> 在 UnrealZoo 数据上训练的离线 RL 跟踪 agent（我们比较了 1-Env. 与 8-Envs. 两种训练设置）。</li>
+</ul>
+<p><img alt="ThreeDWorld with Magnebot" src="../assets/real_world_threedworld.jpeg" /></p>
+<p><em>仿真对比：ThreeDWorld 及其内置 agent“Magnebot”充当目标，用于评估主动跟踪性能。</em></p>
+<p><img alt="Real-world deployment on a wheel-based robot" src="../assets/real_world_deployment.jpeg" /></p>
+<p><em>真实世界部署：我们训练好的策略在轮式机器人上运行，在干扰者中跟踪目标人物。</em></p>
+<h2 id="_4">跨平台评估</h2>
+<p>我们在仿真对比平台（ThreeDWorld）和物理机器人上评估同一跟踪策略。在仿真中我们报告回合长度（EL）和成功率（SR）；在真实世界中我们报告与目标的平均距离（AD）以及跟踪区域的交并比（IoU）。</p>
+<table>
+<thead>
+<tr>
+<th>训练数据</th>
+<th>ThreeDWorld (EL / SR)</th>
+<th>Real World (AD / IoU)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Env.</td>
+<td>377 / 0.65</td>
+<td>764 / 328</td>
+</tr>
+<tr>
+<td>8 Envs.</td>
+<td>493 / 0.80</td>
+<td>833 / 393</td>
+</tr>
+</tbody>
+</table>
+<p><em>数值与论文中打印一致（表 15）。AD/IoU 列打印为 <code>764/328</code> 和 <code>833/393</code>；IoU 项中的小数点在该处似乎缺失。</em></p>
+<h2 id="_5">要点</h2>
+<ul>
+<li>在更多样化环境（8 Envs.）中训练的策略在物理机器人上同样表现更好，与仿真趋势一致：训练期间的多样性是获得户外鲁棒性的关键。</li>
+<li>仿真与真实性能之间的差距主要来自感知噪声和控制延迟，而非策略本身，这也是部署采用带有不同运动模式干扰者的跟踪设置的原因。</li>
+<li>真实世界试验的复现成本仍然很低：仿真中使用的相同 Gym 风格接口和观测/动作空间在机器人上被复用。</li>
+</ul>
 
 
 

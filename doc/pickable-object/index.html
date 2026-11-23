@@ -1231,10 +1231,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blueprint-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blueprint Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hint" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💡Hint
+        💡 Hint
       
     </span>
   </a>
@@ -1616,10 +1638,32 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#class" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Class
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#blueprint-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Blueprint Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#hint" class="md-nav__link">
     <span class="md-ellipsis">
       
-        💡Hint
+        💡 Hint
       
     </span>
   </a>
@@ -1647,17 +1691,49 @@
 
 
 <h1 id="pickable-object">Pickable Object</h1>
-<p>This interactive must be incorporated with a human character</p>
-<p>vbp {character name} set_pickup </p>
-<p>Class Name: BP_GrabMoveDrop_C </p>
-<p>vbp {instance_name} {bp_function} {args1} {args2} ... </p>
-<h2 id="hint">💡Hint</h2>
-<p>You could manually spawn pickable objects and set their location by calling the unrealcv api:</p>
-<p>self.unrealcv.set_new_obj(self, class_name, obj_name) </p>
-<p>self.unrealcv.set_obj_location(self, obj, loc)</p>
+<p>Pickable objects can be grabbed and carried by a human character. This interactive function must be used together with a human character.</p>
+<div class="highlight"><pre><span></span><code>vbp {character name} set_pickup
+</code></pre></div>
+<h2 id="class">Class</h2>
+<div class="highlight"><pre><span></span><code>Class Name: BP_GrabMoveDrop_C
+</code></pre></div>
+<p>Command form:</p>
+<div class="highlight"><pre><span></span><code>vbp {instance_name} {bp_function} {args1} {args2} ...
+</code></pre></div>
+<h2 id="blueprint-functions">Blueprint Functions</h2>
+<table>
+<thead>
+<tr>
+<th>BP_function</th>
+<th>input</th>
+<th>output</th>
+<th>help</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>is_picked</code></td>
+<td>—</td>
+<td><code>{"is_picked":"0"}</code></td>
+<td>Return the object state, picked or not (0/1)</td>
+</tr>
+<tr>
+<td><code>set_app</code></td>
+<td><code>{id}</code></td>
+<td>—</td>
+<td>Set the appearance of the agent object, id: 0~20</td>
+</tr>
+</tbody>
+</table>
+<h2 id="hint">💡 Hint</h2>
+<p>You can manually spawn pickable objects and set their location by calling the UnrealCV API:</p>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">unrealcv</span><span class="o">.</span><span class="n">set_new_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">class_name</span><span class="p">,</span> <span class="n">obj_name</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">unrealcv</span><span class="o">.</span><span class="n">set_obj_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">obj</span><span class="p">,</span> <span class="n">loc</span><span class="p">)</span>
+</code></pre></div>
 <p>Example:</p>
-<p>self.unrealcv.set_new_obj(self, BP_GrabMoveDrop_C, pickable_object_1)  </p>
-<p>self.unrealcv.set_obj_location(self, pickable_object_1, [0,0,100])</p>
+<div class="highlight"><pre><span></span><code><span class="bp">self</span><span class="o">.</span><span class="n">unrealcv</span><span class="o">.</span><span class="n">set_new_obj</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;BP_GrabMoveDrop_C&#39;</span><span class="p">,</span> <span class="s1">&#39;pickable_object_1&#39;</span><span class="p">)</span>
+<span class="bp">self</span><span class="o">.</span><span class="n">unrealcv</span><span class="o">.</span><span class="n">set_obj_location</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="s1">&#39;pickable_object_1&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">100</span><span class="p">])</span>
+</code></pre></div>
 
 
 

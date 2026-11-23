@@ -1316,7 +1316,40 @@
   <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Introduction:
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-platform-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Platform Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Takeaways
       
     </span>
   </a>
@@ -1619,7 +1652,40 @@
   <a href="#introduction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Introduction:
+        Introduction
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment-setup" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deployment Setup
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cross-platform-evaluation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cross-Platform Evaluation
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#takeaways" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Takeaways
       
     </span>
   </a>
@@ -1647,8 +1713,51 @@
 
 
 <h1 id="real-world-transferring">Real-World Transferring</h1>
-<p>✨We deployed tracking policies in real-world scenarios with a target person and multiple distractors (&gt;4) following different movement patterns.</p>
-<h2 id="introduction">Introduction:</h2>
+<p>✨ We deployed tracking policies in real-world scenarios with a target person and multiple distractors (&gt;4) following different movement patterns.</p>
+<h2 id="introduction">Introduction</h2>
+<p>Simulation is only useful if the skills it teaches survive contact with the physical world. To test whether policies trained in UnrealZoo transfer beyond the simulator, we deploy an active visual tracking policy on a physical mobile robot and ask it to follow a target person in a real environment while more than four distractors move around with different motion patterns.</p>
+<p>This setting stresses exactly the factors that are hard to reproduce faithfully in simulation: real lighting and shadows, cluttered and unstructured layouts, imperfect perception, and the latency of the perception–control loop on real hardware.</p>
+<h2 id="deployment-setup">Deployment Setup</h2>
+<ul>
+<li><strong>Robot platform:</strong> a wheel-based mobile robot carrying the onboard camera used for first-person observations.</li>
+<li><strong>Task:</strong> active visual tracking — keep the target person in view and follow them through the scene.</li>
+<li><strong>Distractors:</strong> more than four people moving with different patterns, deliberately crossing the line of sight and occluding the target.</li>
+<li><strong>Policy:</strong> the offline-RL tracking agent trained on UnrealZoo data (we compare the 1-Env. and 8-Envs. training settings).</li>
+</ul>
+<p><img alt="ThreeDWorld with Magnebot" src="../assets/real_world_threedworld.jpeg" /></p>
+<p><em>Simulated comparison: ThreeDWorld with its built-in agent "Magnebot" acting as the target, used to evaluate active tracking performance.</em></p>
+<p><img alt="Real-world deployment on a wheel-based robot" src="../assets/real_world_deployment.jpeg" /></p>
+<p><em>Real-world deployment: our trained policy running on a wheel-based robot, tracking a target person among distractors.</em></p>
+<h2 id="cross-platform-evaluation">Cross-Platform Evaluation</h2>
+<p>We evaluate the same tracking policy on the simulated comparison platform (ThreeDWorld) and on the physical robot. In simulation we report episode length (EL) and success rate (SR); in the real world we report average distance (AD) to the target and intersection-over-union (IoU) of the tracked region.</p>
+<table>
+<thead>
+<tr>
+<th>Training data</th>
+<th>ThreeDWorld (EL / SR)</th>
+<th>Real World (AD / IoU)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 Env.</td>
+<td>377 / 0.65</td>
+<td>764 / 328</td>
+</tr>
+<tr>
+<td>8 Envs.</td>
+<td>493 / 0.80</td>
+<td>833 / 393</td>
+</tr>
+</tbody>
+</table>
+<p><em>Values as printed in the paper (Table 15). The AD/IoU column is printed as <code>764/328</code> and <code>833/393</code>; the decimal point in the IoU term appears to be missing there.</em></p>
+<h2 id="takeaways">Takeaways</h2>
+<ul>
+<li>Policies trained with more diverse environments (8 Envs.) behave better on the physical robot as well, mirroring the simulation trend: diversity during training is what buys robustness outdoors.</li>
+<li>The gap between simulated and real performance is dominated by perception noise and control latency rather than by the policy itself, which is why the deployment uses the tracking setup with distractors of varying movement patterns.</li>
+<li>Real-world trials remain cheap to reproduce: the same Gym-style interface and observation/action space used in simulation is reused on the robot.</li>
+</ul>
 
 
 
