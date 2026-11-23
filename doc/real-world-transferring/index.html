@@ -1335,17 +1335,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cross-platform-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cross-Platform Evaluation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#takeaways" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1671,17 +1660,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#cross-platform-evaluation" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Cross-Platform Evaluation
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#takeaways" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1728,33 +1706,9 @@
 <p><em>Simulated comparison: ThreeDWorld with its built-in agent "Magnebot" acting as the target, used to evaluate active tracking performance.</em></p>
 <p><img alt="Real-world deployment on a wheel-based robot" src="../assets/real_world_deployment.jpeg" /></p>
 <p><em>Real-world deployment: our trained policy running on a wheel-based robot, tracking a target person among distractors.</em></p>
-<h2 id="cross-platform-evaluation">Cross-Platform Evaluation</h2>
-<p>We evaluate the same tracking policy on the simulated comparison platform (ThreeDWorld) and on the physical robot. In simulation we report episode length (EL) and success rate (SR); in the real world we report average distance (AD) to the target and intersection-over-union (IoU) of the tracked region.</p>
-<table>
-<thead>
-<tr>
-<th>Training data</th>
-<th>ThreeDWorld (EL / SR)</th>
-<th>Real World (AD / IoU)</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1 Env.</td>
-<td>377 / 0.65</td>
-<td>764 / 328</td>
-</tr>
-<tr>
-<td>8 Envs.</td>
-<td>493 / 0.80</td>
-<td>833 / 393</td>
-</tr>
-</tbody>
-</table>
-<p><em>Values as printed in the paper (Table 15). The AD/IoU column is printed as <code>764/328</code> and <code>833/393</code>; the decimal point in the IoU term appears to be missing there.</em></p>
 <h2 id="takeaways">Takeaways</h2>
 <ul>
-<li>Policies trained with more diverse environments (8 Envs.) behave better on the physical robot as well, mirroring the simulation trend: diversity during training is what buys robustness outdoors.</li>
+<li>Policies trained with more diverse environments behave better on the physical robot as well, mirroring the simulation trend: diversity during training is what buys robustness outdoors.</li>
 <li>The gap between simulated and real performance is dominated by perception noise and control latency rather than by the policy itself, which is why the deployment uses the tracking setup with distractors of varying movement patterns.</li>
 <li>Real-world trials remain cheap to reproduce: the same Gym-style interface and observation/action space used in simulation is reused on the robot.</li>
 </ul>
