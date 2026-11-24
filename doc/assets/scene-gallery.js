@@ -29,7 +29,7 @@
   }
 
   fetch(dataUrl).then(function (r) { return r.json(); }).then(function (data) {
-    L = data.labels || {};
+    L = data.labels || data;
     var scenes = data.scenes || [];
 
     /* ---- 工具栏 ---- */
@@ -207,6 +207,14 @@
         (s.cats || []).slice(0, 3).forEach(function (t) { tags.appendChild(el('span', 'sg-tag', t)); });
         if (s.ue && s.ue !== '—') tags.appendChild(el('span', 'sg-tag', s.ue));
         meta.appendChild(tags);
+        if (s.source) {
+          var lk = el('a', 'sg-link', (L.asset || 'Asset link') + ' ↗');
+          lk.href = s.source;
+          lk.target = '_blank';
+          lk.rel = 'noopener';
+          lk.onclick = function (ev) { ev.stopPropagation(); };
+          meta.appendChild(lk);
+        }
         card.appendChild(meta);
         grid.appendChild(card);
       });
