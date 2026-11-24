@@ -1586,24 +1586,24 @@
 <h1 id="_3">不同智能体展示</h1>
 <h2 id="_4">人类角色 🚶🏻‍♂️🚶🏻‍♀️</h2>
 <p>虚拟角色使用多样化的网格体来构建丰富且高度逼真的环境。这些虚拟角色可用于创建密集人群和模拟真实城市场景，每个角色均可通过我们的 API 接口进行控制并随机更换外观。</p>
-<p><img alt="" src="../../assets/8053ac76164eb85556855d05dacea84.png" /></p>
+<p><img alt="" src="../assets/8053ac76164eb85556855d05dacea84.png" /></p>
 <h2 id="_5">动物 🐘 🐕 🐎 🐧 🐢 🐖 🐏 🐂</h2>
-<p><img alt="" src="../../assets/bbf0fa8c2237b1140eb85a8bcd25fcb.png" /></p>
+<p><img alt="" src="../assets/bbf0fa8c2237b1140eb85a8bcd25fcb.png" /></p>
 <h2 id="_6">车辆 🏍️ 🚗</h2>
 <p>我们还开发了多种类型的车辆，包括汽车和摩托车。这些车辆可用于自动驾驶和动态交通场景模拟等额外任务。</p>
 <h3 id="ue4">UE4</h3>
-<p><img alt="" src="../../assets/e2b28bdef79dd1988b8a29621e91b8c.png" /></p>
+<p><img alt="" src="../assets/e2b28bdef79dd1988b8a29621e91b8c.png" /></p>
 <h3 id="ue5">UE5</h3>
 <p>💡请注意，在最新的 UE5 版本中，为支持更逼真的混沌系统，每辆车都有各自的类名，set_app 不再能更改外观。如需使用其他车辆，请生成新的车辆实例。</p>
-<p><img alt="" src="../../assets/image.png" /></p>
+<p><img alt="" src="../assets/image.png" /></p>
 <h2 id="_7">无人机 🛩️</h2>
 <p>无人机可通过我们的 API 像车辆一样进行控制。它可用于多智能体协作或异常检测等任务。</p>
-<p><img alt="" src="../../assets/6bb42da16d76f3d2235b7176c6acb4a.png" /></p>
+<p><img alt="" src="../assets/6bb42da16d76f3d2235b7176c6acb4a.png" /></p>
 <h2 id="_8">移动机器人 🤖</h2>
-<p><img alt="" src="../../assets/Untitled.png" /></p>
+<p><img alt="" src="../assets/Untitled.png" /></p>
 <h2 id="_9">可拾取物体 🧸</h2>
 <p>人类角色可使用 set_pickup 来拾取/放下物品，研究人员可通过 API 将其设置在地图上的任意位置，并使用 set_app 更改其外观。</p>
-<p><img alt="" src="../../assets/image.png" /></p>
+<p><img alt="" src="../assets/image.png" /></p>
 <h1 id="api">API：</h1>
 <p>我们利用 Unreal Engine 中的蓝图函数来构建这些用于控制智能体的 API。开发者可按照 UnrealCV 命令系统，通过内置控制台或 Python 代码中的 UnrealCV 直接调用：</p>
 <div class="highlight"><pre><span></span><code><span class="n">vbp</span> <span class="p">[</span><span class="n">obj_name</span><span class="p">]</span> <span class="p">[</span><span class="n">func_name</span><span class="p">]</span> <span class="p">[</span><span class="n">arg1</span><span class="p">]</span> <span class="p">[</span><span class="n">arg2</span><span class="p">]</span> <span class="err">…</span>
@@ -1999,7 +1999,7 @@
 <span class="c1"># 通过给定的角度和速度参数指定移动速度和方向。</span>
 <span class="c1"># 单步执行的间隔时间可通过 &quot;set_interval&quot; 自定义调整</span>
 </code></pre></div>
-<video controls width="640" src="../../assets/Collection_-_%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8_2024-04-22_10-29-14_set_move_2.mp4"></video>
+<video controls playsinline preload="metadata" width="640" src="../../assets/Collection_-_虚幻编辑器_2024-04-22_10-29-14_set_move_2.mp4" style="max-width:100%"></video>
 
 <h3 id="2">2. 高级运动控制</h3>
 <div class="highlight"><pre><span></span><code><span class="c1"># 用于更复杂的探索任务</span>
@@ -2008,27 +2008,27 @@
 <span class="n">vbp</span> <span class="n">bp_character_2</span> <span class="n">set_move</span> <span class="mi">0</span> <span class="mi">100</span>
 <span class="c1"># 设置蹲伏并穿过一些狭窄障碍物</span>
 </code></pre></div>
-<video controls width="640" src="../../assets/Collection_-_%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8_2024-04-22_11-12-05_set_crouch.mp4"></video>
+<video controls playsinline preload="metadata" width="640" src="../../assets/Collection_-_虚幻编辑器_2024-04-22_11-12-05_set_crouch.mp4" style="max-width:100%"></video>
 
 <div class="highlight"><pre><span></span><code><span class="n">vbp</span> <span class="n">bp_character_2</span> <span class="n">set_move</span> <span class="mi">45</span> <span class="mi">100</span>
 <span class="n">vbp</span> <span class="n">bp_character_2</span> <span class="n">set_jump</span>
 <span class="c1"># 当智能体面对低矮障碍物时，可以跳跃并翻越障碍物</span>
 </code></pre></div>
-<video controls width="640" src="../../assets/Collection_-_%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8_2024-04-22_11-25-50_jump.mp4"></video>
+<video controls playsinline preload="metadata" width="640" src="../../assets/Collection_-_虚幻编辑器_2024-04-22_11-25-50_jump.mp4" style="max-width:100%"></video>
 
 <div class="highlight"><pre><span></span><code><span class="n">vbp</span> <span class="n">bp_character_2</span> <span class="n">set_liedown</span> <span class="mi">100</span> <span class="mi">0</span>
 <span class="n">vbp</span> <span class="n">bp_character_2</span> <span class="n">set_standup</span>
 <span class="c1"># 模拟跌倒动作，给定跌倒方向，</span>
 <span class="c1"># 以及恢复动画。</span>
 </code></pre></div>
-<video controls width="640" src="../../assets/Collection_-_%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8_2024-04-22_10-35-27_liedown.mp4"></video>
+<video controls playsinline preload="metadata" width="640" src="../../assets/Collection_-_虚幻编辑器_2024-04-22_10-35-27_liedown.mp4" style="max-width:100%"></video>
 
 <h3 id="3">3. 通过导航系统控制运动</h3>
 <div class="highlight"><pre><span></span><code><span class="n">vbp</span> <span class="n">bp_character_2</span> <span class="n">nav_to_object</span> <span class="n">bp_animal_2</span> <span class="mi">200</span>
 <span class="c1"># 使用导航系统控制 bp_character 移动到特定物体（bp_animal_2），</span>
 <span class="c1"># 并在到达 200 的半径范围时停止</span>
 </code></pre></div>
-<video controls width="640" src="../../assets/Collection_-_%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8_2024-04-23_15-29-46_nav_to_object_natrue.mp4"></video>
+<video controls playsinline preload="metadata" width="640" src="../../assets/Collection_-_虚幻编辑器_2024-04-23_15-29-46_nav_to_object_natrue.mp4" style="max-width:100%"></video>
 
 <div class="highlight"><pre><span></span><code><span class="n">vbp</span> <span class="n">Sport_2</span> <span class="n">set_viewport</span>
 <span class="n">vbp</span> <span class="n">bp_basecar_2</span> <span class="n">nav_to_goal</span> <span class="o">-</span><span class="mi">1620</span> <span class="o">-</span><span class="mi">3071</span> <span class="mi">487</span>
@@ -2037,7 +2037,7 @@
 <span class="c1"># 使用导航系统控制摩托车智能体沿最短路径导航至环境中的指定位置</span>
 <span class="c1"># 显示自由漫游视角</span>
 </code></pre></div>
-<video controls width="640" src="../../assets/Collection_-_%E8%99%9A%E5%B9%BB%E7%BC%96%E8%BE%91%E5%99%A8_2024-04-23_18-13-10_motorbike_nav_to_goal.mp4"></video>
+<video controls playsinline preload="metadata" width="640" src="../../assets/Collection_-_虚幻编辑器_2024-04-23_18-13-10_motorbike_nav_to_goal.mp4" style="max-width:100%"></video>
 
 <h3 id="4">4. 拾取/放下物体</h3>
 <div class="highlight"><pre><span></span><code><span class="n">vbp</span> <span class="n">bp_character_2</span> <span class="n">set_pickup</span>
@@ -2046,7 +2046,7 @@
 <span class="c1"># &#39;set_pickup&#39; 命令或按键盘 &#39;E&#39; 将触发物体交互动画。</span>
 <span class="c1"># 再次调用 set_pickup，智能体将放下物体。</span>
 </code></pre></div>
-<video controls width="640" src="../../assets/85ea109a40109f68a5b11bab3ec51734.mp4"></video>
+<video controls playsinline preload="metadata" width="640" src="../../assets/85ea109a40109f68a5b11bab3ec51734.mp4" style="max-width:100%"></video>
 
 <h3 id="5">5. 开门</h3>
 <div class="highlight"><pre><span></span><code><span class="n">vbp</span> <span class="n">bp_character_2</span> <span class="n">set_opendoor</span> <span class="mi">1</span> <span class="c1">#开门</span>
@@ -2056,7 +2056,7 @@
 <span class="c1"># 当人类智能体进入可交互门的范围时，</span>
 <span class="c1"># &#39;set_opendoor&#39; 命令或按键盘 &#39;E&#39; 将触发门交互动画。</span>
 </code></pre></div>
-<video controls width="640" src="../../assets/Open_Door.mp4"></video>
+<video controls playsinline preload="metadata" width="640" src="../../assets/Open_Door.mp4" style="max-width:100%"></video>
 
 
 
